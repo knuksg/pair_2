@@ -1,11 +1,18 @@
 {% extends 'base.html' %}
 {% block body %}
+{% load django_bootstrap5 %}
+
 <h1>리뷰 쓰기</h1>
 <hr>
 
 <form action="{% url 'reviews:create' %}" method="POST">
   {% csrf_token %}
-  <label for="title">리뷰 제목: </label>
+  {% bootstrap_form movie_form %}
+  <!-- {{  movie_form.as_p }} -->
+  <input type="submit" value="글쓰기">
+</form>
+
+<!-- <label for="title">리뷰 제목: </label>
   <input type="text" name="title" id="title"> <br>
   <hr>
 
@@ -20,8 +27,8 @@
   <label for="grade">평점: </label>
   <input type="text" name="grade" id="grade"> <br>
 
-  <input type="submit" value="글쓰기">
-</form>
+  <input type="submit" value="글쓰기"> -->
+<!-- </form> -->
 
 <a href="{% url 'reviews:index' %}">홈으로</a>
 
