@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block body %}
+  <h1>리뷰 수정 하기</h1>
+  <hr>
+
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ movie_form.as_p }}
+    <input type="submit" value="수정하기">
+  </form>
+
+  <a href="{% url 'reviews:index' %}">홈으로</a>
+
+{% endblock body %}
