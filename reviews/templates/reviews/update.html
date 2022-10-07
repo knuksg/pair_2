@@ -1,6 +1,22 @@
 {% extends 'base.html' %}
 {% block body %}
-  <h1>리뷰 수정 하기</h1>
+{% load django_bootstrap5 %}
+
+<h1>리뷰 수정 하기</h1>
+<hr>
+
+<form action="" method="POST">
+  {% csrf_token %}
+  {% bootstrap_form movie_form %}
+  <!-- {{ movie_form.as_p }} -->
+  <div class='d-flex justify-content-between'>
+    {% comment %} 홈버튼 {% endcomment %}
+    {% url 'reviews:index' as index %}
+    {% bootstrap_button "홈으로" button_type="link" href=index button_class="btn-dark" %}
+    {% bootstrap_button "리뷰 수정하기" button_type="submit" button_class="btn-dark" %}
+  </div>
+</form>
+  {% comment %} <h1>리뷰 수정 하기</h1>
   <hr>
 
   <form action="" method="POST">
@@ -9,6 +25,6 @@
     <input type="submit" value="수정하기">
   </form>
 
-  <a href="{% url 'reviews:index' %}">홈으로</a>
+  <a href="{% url 'reviews:index' %}">홈으로</a> {% endcomment %}
 
 {% endblock body %}

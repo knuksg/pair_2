@@ -1,35 +1,21 @@
 {% extends 'base.html' %}
 {% block body %}
-{% load django_bootstrap5 %}
+  {% load django_bootstrap5 %}
 
-<h1>리뷰 쓰기</h1>
-<hr>
-
-<form action="{% url 'reviews:create' %}" method="POST">
-  {% csrf_token %}
-  {% bootstrap_form movie_form %}
-  <!-- {{  movie_form.as_p }} -->
-  <input type="submit" value="글쓰기">
-</form>
-
-<!-- <label for="title">리뷰 제목: </label>
-  <input type="text" name="title" id="title"> <br>
+  <h1>리뷰 쓰기</h1>
   <hr>
 
-  <label for="content">리뷰 내용: </label>
-  <textarea name="content" id="content" cols="30" row="10"></textarea> <br>
-  <hr>
+  <form action="{% url 'reviews:create' %}" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form movie_form %}
+    <!-- {{ movie_form.as_p }} -->
+    <div class='d-flex justify-content-between'>
+      {% comment %} 홈버튼 {% endcomment %}
+      {% url 'reviews:index' as index %}
+      {% bootstrap_button "홈으로" button_type="link" href=index button_class="btn-dark" %}
+      {% bootstrap_button "리뷰 작성하기" button_type="submit" button_class="btn-dark" %}
+    </div>
+  </form>
 
-  <label for="movie_name">영화 이름: </label>
-  <input type="text" name="movie_name" id="movie_name"> <br>
-  <hr>
-
-  <label for="grade">평점: </label>
-  <input type="text" name="grade" id="grade"> <br>
-
-  <input type="submit" value="글쓰기"> -->
-<!-- </form> -->
-
-<a href="{% url 'reviews:index' %}">홈으로</a>
 
 {% endblock body %}
