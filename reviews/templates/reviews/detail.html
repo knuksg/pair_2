@@ -7,9 +7,15 @@
     |
     {{ reviews.updated_at }}</p>
   <p>{{ reviews.content }}</p>
-  <a href="{% url 'reviews:update' reviews.pk %}">수정하기</a>
-  <a href="{% url 'reviews:delete' reviews.pk %}">삭제하기</a>
-  <a href="{% url 'reviews:index' %}">홈으로</a>
+  <a class="text-decoration-none text-dark btn fs-3 me-3" href="{% url 'reviews:update' reviews.pk %}">
+    <i class="bi bi-bootstrap-reboot"></i>
+  </a>
+  <a class="text-decoration-none text-dark btn fs-3 me-3" href="{% url 'reviews:delete' reviews.pk %}">
+    <i class="bi bi-trash3"></i>
+  </a>
+  <a class="text-decoration-none text-dark btn fs-3" href="{% url 'reviews:index' %}">
+    <i class="bi bi-house-fill"></i>
+  </a>
   <hr>
 
 {% endblock body %}
