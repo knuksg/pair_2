@@ -5,10 +5,11 @@ from django.db.models import Avg
 
 # Create your views here.
 def index(request):
-    reviews = Movie.objects.order_by("-pk")
-    grade = Movie.objects.aggregate(Avg("grade"))
+    reviews_pk = Movie.objects.order_by("-pk")
+    reviews_title = Movie.objects.order_by("title")
     context = {
-        "reviews": reviews,
+        "reviews": reviews_pk,
+        "reviews_title": reviews_title,
     }
     return render(request, "reviews/index.html", context)
 

@@ -33,7 +33,7 @@
   <!-- 게시판 제목/쓰기 버튼-->
   <h1 class="text-center fw-bold">영화 리뷰 게시판</h1>
   <div class="text-end">
-    <a class="text-decoration-none text-dark fs-3" href="{% url 'reviews:create' %}">
+    <a class="text-decoration-none text-dark fs-4" href="{% url 'reviews:create' %}">
       리뷰 쓰기
       <i class="bi bi-pencil-square"></i>
     </a>
@@ -44,7 +44,7 @@
     <thead>
       <tr class="fs-4">
         <th scope="col">글 번호</th>
-        <th scope="col">리뷰 제목</th>
+        <th scope="col" id="title_btn">리뷰 제목</th>
         <th scope="col">영화 이름</th>
         <th scope="col">작성 시간</th>
       </tr>
@@ -63,12 +63,8 @@
           <td>
             {{review.updated_at}}
           </td>
-          <td>
-            {{review.grade}}
-          </td>
         </tr>
       {% endfor %}
-
     </tbody>
   </table>
 

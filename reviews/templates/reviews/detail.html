@@ -1,21 +1,27 @@
 {% extends 'base.html' %}
 {% block body %}
-  <h1>{{ reviews.title }}</h1>
-  <h3>{{ reviews.movie_name }}</h3>
-
-  <p>{{ reviews.create_at }}
-    |
-    {{ reviews.updated_at }}</p>
-  <p>{{ reviews.content }}</p>
-  <a class="text-decoration-none text-dark btn fs-3 me-3" href="{% url 'reviews:update' reviews.pk %}">
-    <i class="bi bi-bootstrap-reboot"></i>
-  </a>
-  <a class="text-decoration-none text-dark btn fs-3 me-3" href="{% url 'reviews:delete' reviews.pk %}">
-    <i class="bi bi-trash3"></i>
-  </a>
-  <a class="text-decoration-none text-dark btn fs-3" href="{% url 'reviews:index' %}">
-    <i class="bi bi-house-fill"></i>
-  </a>
+  <div class="text-center mb-3">
+    <h3 class=" text-secondary">{{ reviews.movie_name }}</h3>
+    <h1>{{ reviews.title }}</h1>
+  </div>
+  <div class="text-end mb-5">
+    <span>작성 |
+      {{ reviews.created_at }}</span>
+    <p>수정 |
+      {{ reviews.updated_at }}</p>
+  </div>
+  <p class="my-5">{{ reviews.content }}</p>
+  <div class="text-end">
+    <a class="text-decoration-none text-dark btn fs-3 me-3" href="{% url 'reviews:update' reviews.pk %}">
+      <i class="bi bi-bootstrap-reboot"></i>
+    </a>
+    <a class="text-decoration-none text-dark btn fs-3 me-3" href="{% url 'reviews:delete' reviews.pk %}">
+      <i class="bi bi-trash3"></i>
+    </a>
+    <a class="text-decoration-none text-dark btn fs-3" href="{% url 'reviews:index' %}">
+      <i class="bi bi-house-fill"></i>
+    </a>
+  </div>
   <hr>
 
 {% endblock body %}
