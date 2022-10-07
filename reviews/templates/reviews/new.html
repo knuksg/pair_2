@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>리뷰 쓰기</h1>
+<hr>
+
+<form action="{% url 'reviews:create' %}" method="POST">
+  {% csrf_token %}
+  <label for="title">리뷰 제목: </label>
+  <input type="text" name="title" id="title"> <br>
+  <hr>
+
+  <label for="content">리뷰 내용: </label>
+  <textarea name="content" id="content" cols="30" row="10"></textarea> <br>
+  <hr>
+
+  <label for="movie_name">영화 이름: </label>
+  <input type="text" name="movie_name" id="movie_name"> <br>
+  <hr>
+
+  <label for="grade">평점: </label>
+  <input type="text" name="grade" id="grade"> <br>
+
+  <input type="submit" value="글쓰기">
+</form>
+
+<a href="{% url 'reviews:index' %}">홈으로</a>
+
+{% endblock body %}

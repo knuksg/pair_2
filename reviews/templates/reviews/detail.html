@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1>{{ reviews.title }}</h1>
+<h3>{{ reviews.movie_name }}</h3>
+
+<p>{{ reviews.create_at }} | {{ reviews.updated_at }}</p>
+<p>{{ reviews.content }}</p>
+<a href="{% url 'reviews:index' %}">홈으로</a>
+<hr>
+
+{% endblock body %}

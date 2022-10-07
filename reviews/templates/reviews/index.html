@@ -1,2 +1,14 @@
 {% extends 'base.html' %}
-{% block body %}{% endblock body %}
+{% block body %}
+<h1>영화 리뷰 게시판</h1>
+<a href="{% url 'reviews:new' %}">리뷰 쓰기</a>
+<hr>
+
+{% for review in reviews %}
+<h3><a href="{% url 'reviews:detail' review.pk %}">{{ review.title }}</a></h3>
+<p>{{ review.movie_name }}</p>
+<p>{{ review.create_at }} | {{ review.updated_at }}</p>
+<hr>
+{% endfor %}
+
+{% endblock body %}
