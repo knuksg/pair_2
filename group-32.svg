@@ -1,0 +1,20 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect opacity="0.8" width="60" height="60" rx="6" fill="white"/>
+<g clip-path="url(#clip0_17_38539)">
+<path d="M25 35H16C15.45 35 15 34.55 15 34V26C15 25.45 15.45 25 16 25H25V35Z" fill="#E717FF"/>
+<path d="M26 36H16C14.9 36 14 35.1 14 34V26C14 24.9 14.9 24 16 24H26V36ZM16 26V34H24V26H16Z" fill="black"/>
+<path d="M35 25H25V35H35V25Z" fill="white"/>
+<path d="M36 36H24V24H36V36ZM26 34H34V26H26V34Z" fill="black"/>
+<path d="M44 35H35V25H45V34C45 34.55 44.55 35 44 35Z" fill="#FFA92E"/>
+<path d="M44 36H34V24H46V34C46 35.1 45.1 36 44 36ZM36 34H44V26H36V34Z" fill="black"/>
+<path d="M45 25H35V16C35 15.45 35.45 15 36 15H44C44.55 15 45 15.45 45 16V25Z" fill="white"/>
+<path d="M46 26H34V16C34 14.9 34.9 14 36 14H44C45.1 14 46 14.9 46 16V26ZM36 24H44V16H36V24Z" fill="black"/>
+<path d="M34 45H26C25.45 45 25 44.55 25 44V35H35V44C35 44.55 34.55 45 34 45Z" fill="#0064FF"/>
+<path d="M34 46H26C24.9 46 24 45.1 24 44V34H36V44C36 45.1 35.1 46 34 46ZM26 36V44H34V36H26Z" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_17_38539">
+<rect width="32" height="32" fill="white" transform="translate(14 14)"/>
+</clipPath>
+</defs>
+</svg>
